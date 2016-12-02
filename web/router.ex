@@ -19,8 +19,12 @@ defmodule Web.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Web do
-  #   pipe_through :api
-  # end
+  scope "/movies", Web do
+    pipe_through :api
+
+    get "/findByTitleContaining", MovieController, :search_by_title_containing
+    get "/findByTitle", MovieController, :search_by_title
+    get "/graph", MovieController, :graph
+  end
+
 end
