@@ -13,6 +13,12 @@ config :web, Web.Endpoint,
   check_origin: false,
   watchers: []
 
+config :bolt_sips, Bolt,
+  hostname: "localhost",
+  basic_auth: [username: "neo4j", password: "password"],
+  port: 7687,
+  pool_size: 5,
+  max_overflow: 1
 
 # Watch static and templates for browser reloading.
 config :web, Web.Endpoint,

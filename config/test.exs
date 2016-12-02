@@ -6,5 +6,13 @@ config :web, Web.Endpoint,
   http: [port: 4001],
   server: false
 
+config :bolt_sips, Bolt,
+  hostname: "localhost",
+  basic_auth: [username: "neo4j", password: "password"],
+  port: 7688,
+  pool_size: 5,
+  max_overflow: 1
+
+
 # Print only warnings and errors during test
 config :logger, level: :warn
